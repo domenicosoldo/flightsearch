@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Flight Search
+
+  Created by Domenico Soldo on 5/06/2015.
+  Copyright (c) 2015 Domenico Soldo. All rights reserved.
+*/
+"Error" = "Errore";
+"Departure date:" = "Data di partenza";
+"Return date:" = "Data di ritorno";
+"Departure airport code has to have at least 3 letters" = "Aereoporto di partenza deve avere almeno tre caratteri";
+"Arrival airport code has to have at least 3 letters" = "Aereoporto di arrivo deve avere almeno tre caratteri";
+"Return date has to come after Departure date" = "Data di ritorno non puà precedere la data di arrivo";
+"Please wait..." = "Attendere prego...";
+"$ %ld" = "%ld $";
+"There was a problem searching flights. Check your Internet connection and try again." = "There was a problem searching flights. Check your Internet connection and try again.";
+"No flights found with these parameters" = "No flights found with these parameters";
+"Flights found" = "Voli trovati";

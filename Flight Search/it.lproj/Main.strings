@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "3cA-xM-v1m"; */
+"3cA-xM-v1m.normalTitle" = "Ricerca";
+
+/* Class = "UITextField"; placeholder = "Departure airport code"; ObjectID = "8ul-1Q-vy0"; */
+"8ul-1Q-vy0.placeholder" = "Aereoporto di partenza";
+
+/* Class = "UITextField"; placeholder = "Arrival airport code"; ObjectID = "Tpx-GD-FD0"; */
+"Tpx-GD-FD0.placeholder" = "Arrival di arrivo";
+
+/* Class = "UILabel"; text = "Inbound Flights:"; ObjectID = "YD0-Ca-NR8"; */
+"YD0-Ca-NR8.text" = "Inbound Flights:";
+
+/* Class = "UINavigationItem"; title = "Search Flights"; ObjectID = "YQF-XA-hPe"; */
+"YQF-XA-hPe.title" = "Ricerca Volo";
+
+/* Class = "UILabel"; text = "Total Amount:"; ObjectID = "hNI-Q2-XrM"; */
+"hNI-Q2-XrM.text" = "Costo totale:";
+
+/* Class = "UILabel"; text = "Outbound Flights:"; ObjectID = "ykL-mR-XW6"; */
+"ykL-mR-XW6.text" = "Outbound Flights:";

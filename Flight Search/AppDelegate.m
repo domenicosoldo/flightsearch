@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Categories.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UINavigationBar appearance].barTintColor = [UIColor FlightsLightBluColor];
     return YES;
 }
 

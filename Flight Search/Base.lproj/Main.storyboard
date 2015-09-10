@@ -1,25 +1,298 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eUG-aD-u5Y">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Search Flights-->
+        <scene sceneID="GVQ-3h-oEs">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="6BJ-MA-dJR" customClass="SearchFlightTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bK3-jZ-1a5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="textCell" rowHeight="120" id="KSM-SM-fLQ" customClass="AirportTextCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KSM-SM-fLQ" id="Iah-w2-AmX">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departure airport code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ul-1Q-vy0">
+                                            <rect key="frame" x="13" y="18" width="574" height="30"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                            <connections>
+                                                <action selector="departureChangedAction:" destination="6BJ-MA-dJR" eventType="editingChanged" id="XXR-dv-Dwo"/>
+                                                <outlet property="delegate" destination="6BJ-MA-dJR" id="b5Y-RF-X0v"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrival airport code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tpx-GD-FD0">
+                                            <rect key="frame" x="13" y="63" width="574" height="30"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                            <connections>
+                                                <action selector="arrivalChangedAction:" destination="6BJ-MA-dJR" eventType="editingChanged" id="Od5-pE-Grv"/>
+                                                <outlet property="delegate" destination="6BJ-MA-dJR" id="Y3u-tS-sxy"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8ul-1Q-vy0" secondAttribute="trailing" constant="5" id="BM5-oi-Bid"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tpx-GD-FD0" secondAttribute="trailing" constant="5" id="Bzf-Bw-wfq"/>
+                                        <constraint firstItem="8ul-1Q-vy0" firstAttribute="top" secondItem="Iah-w2-AmX" secondAttribute="topMargin" constant="10" id="ReT-I0-mGk"/>
+                                        <constraint firstItem="Tpx-GD-FD0" firstAttribute="leading" secondItem="Iah-w2-AmX" secondAttribute="leadingMargin" constant="5" id="jaa-Ti-cJV"/>
+                                        <constraint firstItem="Tpx-GD-FD0" firstAttribute="top" secondItem="8ul-1Q-vy0" secondAttribute="bottom" constant="15" id="mL4-Ry-JsK"/>
+                                        <constraint firstItem="8ul-1Q-vy0" firstAttribute="leading" secondItem="Iah-w2-AmX" secondAttribute="leadingMargin" constant="5" id="rTW-gs-fCr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="arrivalAirportTextField" destination="Tpx-GD-FD0" id="KKs-ws-To7"/>
+                                    <outlet property="departureAirportTextField" destination="8ul-1Q-vy0" id="HRB-Dh-oEs"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="dateCell" textLabel="qqW-tQ-7Wh" detailTextLabel="AJU-Gt-aBL" style="IBUITableViewCellStyleValue1" id="xS0-bp-9T2">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xS0-bp-9T2" id="jgX-Le-wJB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qqW-tQ-7Wh">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Wed 12 May 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AJU-Gt-aBL">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="datePicker" rowHeight="162" id="yzh-c4-HPV" customClass="DataPickerCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzh-c4-HPV" id="21K-lD-x6l">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker tag="99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-Hi-9CO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="455067313.99211597">
+                                                <!--2015-06-03 23:35:13 +0000-->
+                                            </date>
+                                            <date key="minimumDate" timeIntervalSinceReferenceDate="-978310800">
+                                                <!--1969-12-31 23:00:00 +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="pickerChangedAction:" destination="6BJ-MA-dJR" eventType="valueChanged" id="4CB-2u-yQP"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JmK-Hi-9CO" firstAttribute="top" secondItem="21K-lD-x6l" secondAttribute="top" id="5E8-Fc-bdN"/>
+                                        <constraint firstItem="JmK-Hi-9CO" firstAttribute="leading" secondItem="21K-lD-x6l" secondAttribute="leading" id="wHh-kO-yb2"/>
+                                        <constraint firstAttribute="trailing" secondItem="JmK-Hi-9CO" secondAttribute="trailing" id="wft-HF-hGp"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="datePicker" destination="JmK-Hi-9CO" id="vwn-4J-ZQd"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="SzH-Zs-MBZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SzH-Zs-MBZ" id="1rw-bq-Dmx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-xM-v1m">
+                                            <rect key="frame" x="60" y="12" width="480" height="45"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                            <state key="normal" title="Search" backgroundImage="button_call">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="searchAction:" destination="6BJ-MA-dJR" eventType="touchUpInside" id="dck-qs-AbA"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="3cA-xM-v1m" secondAttribute="centerY" id="AQv-uo-MH4"/>
+                                        <constraint firstAttribute="centerX" secondItem="3cA-xM-v1m" secondAttribute="centerX" id="Myp-UU-TQ8"/>
+                                        <constraint firstAttribute="bottom" secondItem="3cA-xM-v1m" secondAttribute="bottom" constant="12" id="Uh8-dm-4rI"/>
+                                        <constraint firstItem="3cA-xM-v1m" firstAttribute="leading" secondItem="1rw-bq-Dmx" secondAttribute="leading" constant="60" id="Vcs-VT-lyM"/>
+                                        <constraint firstAttribute="trailing" secondItem="3cA-xM-v1m" secondAttribute="trailing" constant="60" id="cGv-dH-2OF"/>
+                                        <constraint firstItem="3cA-xM-v1m" firstAttribute="top" secondItem="1rw-bq-Dmx" secondAttribute="top" constant="12" id="kFj-D6-toh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="6BJ-MA-dJR" id="zCO-rN-psv"/>
+                            <outlet property="delegate" destination="6BJ-MA-dJR" id="A4B-4h-heD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search Flights" id="YQF-XA-hPe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="AbI-BU-4cL">
+                            <connections>
+                                <action selector="searchAction:" destination="6BJ-MA-dJR" id="2p4-9L-RSl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="QWA-hd-p7E" kind="show" identifier="showFlightsFound" id="WiD-bV-Q9P"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1x-Zc-5Nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1970" y="269"/>
+        </scene>
+        <!--List Flights Table View Controller-->
+        <scene sceneID="Jgw-Ph-A8K">
+            <objects>
+                <tableViewController id="QWA-hd-p7E" customClass="ListFlightsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="22" sectionFooterHeight="22" id="iEU-fF-nsP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCellID" rowHeight="122" id="un6-wJ-4rP" customClass="FlightCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="un6-wJ-4rP" id="hjA-tT-KrU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="FRz-4v-6Vi">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="KSR-M8-C1Q"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emirates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27z-3m-HuY">
+                                            <rect key="frame" x="126" y="10" width="438" height="19"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outbound Flights:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykL-mR-XW6">
+                                            <rect key="frame" x="126" y="60" width="127" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNI-Q2-XrM">
+                                            <rect key="frame" x="126" y="93" width="102" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbN-V5-qR9">
+                                            <rect key="frame" x="50" y="60" width="500" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="500" id="ibt-u8-bKr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-Fm-J9f">
+                                            <rect key="frame" x="50" y="50" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inbound Flights:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YD0-Ca-NR8">
+                                            <rect key="frame" x="126" y="42" width="116" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30:50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7l-vF-7S9">
+                                            <rect key="frame" x="541" y="42" width="46" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzA-nM-GV8">
+                                            <rect key="frame" x="541" y="60" width="46" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 2.540" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-TK-LXI">
+                                            <rect key="frame" x="527" y="90" width="60" height="18"/>
+                                            <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RpG-TK-LXI" secondAttribute="bottom" constant="5" id="0Rn-0i-E1e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IzA-nM-GV8" secondAttribute="trailing" constant="5" id="26L-lQ-Uhd"/>
+                                        <constraint firstItem="HbN-V5-qR9" firstAttribute="top" secondItem="YD0-Ca-NR8" secondAttribute="bottom" id="2hf-K3-uMF"/>
+                                        <constraint firstItem="ykL-mR-XW6" firstAttribute="leading" secondItem="FRz-4v-6Vi" secondAttribute="trailing" constant="5" id="6O0-KZ-b7j"/>
+                                        <constraint firstItem="HvR-Fm-J9f" firstAttribute="leading" secondItem="hjA-tT-KrU" secondAttribute="leading" constant="50" id="7Xo-5b-bDm"/>
+                                        <constraint firstItem="HbN-V5-qR9" firstAttribute="top" secondItem="f7l-vF-7S9" secondAttribute="bottom" id="ADE-Ev-nn8"/>
+                                        <constraint firstItem="ykL-mR-XW6" firstAttribute="top" secondItem="HbN-V5-qR9" secondAttribute="bottom" id="ESh-3K-cGM"/>
+                                        <constraint firstAttribute="bottom" secondItem="hNI-Q2-XrM" secondAttribute="bottom" constant="10" id="GNG-0f-5em"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="f7l-vF-7S9" secondAttribute="trailing" constant="5" id="GSn-nb-pAP"/>
+                                        <constraint firstAttribute="centerY" secondItem="HbN-V5-qR9" secondAttribute="centerY" id="HJT-ez-RUi"/>
+                                        <constraint firstItem="IzA-nM-GV8" firstAttribute="top" secondItem="HbN-V5-qR9" secondAttribute="bottom" id="I2H-kk-nGS"/>
+                                        <constraint firstItem="YD0-Ca-NR8" firstAttribute="leading" secondItem="FRz-4v-6Vi" secondAttribute="trailing" constant="5" id="PmV-a3-Cac"/>
+                                        <constraint firstAttribute="trailing" secondItem="27z-3m-HuY" secondAttribute="trailing" constant="36" id="U2M-Ao-Cko"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RpG-TK-LXI" secondAttribute="trailing" constant="5" id="eom-lS-3fU"/>
+                                        <constraint firstItem="FRz-4v-6Vi" firstAttribute="leading" secondItem="hjA-tT-KrU" secondAttribute="leading" id="hVQ-Ag-2dN"/>
+                                        <constraint firstAttribute="centerX" secondItem="HbN-V5-qR9" secondAttribute="centerX" id="pA5-dt-Wc0"/>
+                                        <constraint firstItem="FRz-4v-6Vi" firstAttribute="top" secondItem="hjA-tT-KrU" secondAttribute="top" id="q5S-p2-MK0"/>
+                                        <constraint firstItem="27z-3m-HuY" firstAttribute="top" secondItem="hjA-tT-KrU" secondAttribute="top" constant="10" id="sn6-OE-qzj"/>
+                                        <constraint firstItem="hNI-Q2-XrM" firstAttribute="leading" secondItem="FRz-4v-6Vi" secondAttribute="trailing" constant="5" id="su4-00-L5s"/>
+                                        <constraint firstAttribute="bottom" secondItem="FRz-4v-6Vi" secondAttribute="bottom" id="tub-rC-b2X"/>
+                                        <constraint firstAttribute="centerY" secondItem="HvR-Fm-J9f" secondAttribute="centerY" id="v3v-TA-yk7"/>
+                                        <constraint firstItem="27z-3m-HuY" firstAttribute="leading" secondItem="FRz-4v-6Vi" secondAttribute="trailing" constant="5" id="wLI-ZR-3x2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="airlineLogo" destination="FRz-4v-6Vi" id="xB0-yE-cVZ"/>
+                                    <outlet property="airlineLogoIndicator" destination="HvR-Fm-J9f" id="Dqg-fK-3Wi"/>
+                                    <outlet property="airlineName" destination="27z-3m-HuY" id="9vf-4T-u5p"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QWA-hd-p7E" id="1WW-BU-WMS"/>
+                            <outlet property="delegate" destination="QWA-hd-p7E" id="fPu-hM-0Mc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JsV-X4-zfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755" y="258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Ws-rL-weL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eUG-aD-u5Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eqp-57-4hx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6BJ-MA-dJR" kind="relationship" relationship="rootViewController" id="waj-RM-yyP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOf-0m-ML5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="269"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_call" width="290" height="45"/>
+        <image name="noimage" width="320" height="280"/>
+    </resources>
 </document>
